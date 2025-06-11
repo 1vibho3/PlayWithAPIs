@@ -1,0 +1,19 @@
+{
+  "name": "playwithapis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1vibho3/PlayWithAPIs.git"
+  },
+  "author": "vibho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1vibho3/PlayWithAPIs/issues"
+  },
+  "homepage": "https://github.com/1vibho3/PlayWithAPIs#readme"
+}
