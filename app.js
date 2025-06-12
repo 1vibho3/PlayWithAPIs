@@ -1,17 +1,17 @@
 const express = require('express');
-
 const app = express();
 app.use(express.json());
 
-app.get('/todos', (req, res) => {
-    const status = {
-        "status" : "running"
-    }
-    res.send(status);
+const todos = [];
+
+app.get('/todos/', (req, res) => {
+    res.status(201).send(todos);  
 })
 
 app.post('/todos', (req, res)=>{
-    res.send("Hello world");
+    const todo = {id: 1, item: req.body.text}
+    todos.push(todo);
+    res.send("Todos Updated");
 })
 
 app.put('/todos/:id', (req, res)=>{
