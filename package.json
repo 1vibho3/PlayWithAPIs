@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node": "app.js",
+    "nodemon": "app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/1vibho3/PlayWithAPIs/issues"
   },
-  "homepage": "https://github.com/1vibho3/PlayWithAPIs#readme"
+  "homepage": "https://github.com/1vibho3/PlayWithAPIs#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
 }
