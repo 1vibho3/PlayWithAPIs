@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/1vibho3/PlayWithAPIs#readme",
   "dependencies": {
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "mongoose": "^8.15.1",
     "node-cache": "^5.1.2",
     "nodemon": "^3.1.10"
   }
