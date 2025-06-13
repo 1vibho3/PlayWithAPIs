@@ -4,9 +4,20 @@ const Book = require('../models/book.js');
 exports.getAllBooks = async (req, res) =>{
     try{
         const {author, genre} = req.query;
-        const list = await Book.find({author: author, genre: genre});
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const total = await Book.countDocuments();
+
+        const startIndex = (page-1)*limit;
+
+        const list = await Book.find({author: author, genre: genre}).skip(startIndex).limit(limit);
         console.log(list);
-        res.status(200).json(list);
+        res.status(200).json({
+            page,
+            limit,
+            total,
+            pages: Math.ceil(total/limit),
+            list});
     } 
     catch (err){
         res.status(500).json({message: "Could not get books"});
