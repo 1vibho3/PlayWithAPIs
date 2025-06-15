@@ -8,7 +8,9 @@ app.use(express.json());
 
 app.use('/books', bookRoutes);
 ConnectDB();
-app.listen(8080, () => {
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
     
    // ConnectDB.getCollectionNames();
     console.log("server is listening on port 8000");
