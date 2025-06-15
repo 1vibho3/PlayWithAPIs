@@ -1,10 +1,10 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const {getAllBooks, createBook, getBookById, deleteBook} = require('../controllers/bookController.js');
+import {getAllBooks, createBook, getBookById, deleteBook} from '../controllers/bookController.js';
 
 router.get('/', getAllBooks);
 router.post('/', createBook);
 router.get('/:id', getBookById);
 router.delete('/:id', deleteBook);
 
-module.exports = router;
+export default router;

@@ -1,7 +1,6 @@
-let books = require('../data/books.js');
-const Book = require('../models/book.js');
+import Book from '../models/book.js';
 
-exports.getAllBooks = async (req, res) =>{
+export async function getAllBooks(req, res) {
     try{
         const {author, genre} = req.query;
         const page = parseInt(req.query.page) || 1;
@@ -25,7 +24,7 @@ exports.getAllBooks = async (req, res) =>{
     
 }
 
-exports.createBook = async (req, res) => {
+export async function createBook(req, res) {
     
     const savedBooks = []
     try{
@@ -46,7 +45,7 @@ exports.createBook = async (req, res) => {
    
 }
 
-exports.getBookById = async (req, res) => {
+export async function getBookById(req, res) {
     try{
         const id = req.params.id;
         console.log(id);
@@ -59,7 +58,7 @@ exports.getBookById = async (req, res) => {
    
 }
 
-exports.deleteBook = async (req, res) => {
+export async function deleteBook(req, res)  {
     const authorizationToken = req.headers.authorization;
     
     if(authorizationToken !== "secret123"){

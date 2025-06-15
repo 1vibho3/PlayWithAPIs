@@ -1,7 +1,7 @@
-const express = require('express');
-const ConnectDB = require('./config/db.js');
-const bookRoutes = require('./routes/bookRoute.js');
-require('dotenv').config()
+import express from 'express';
+import ConnectDB from './config/db.js';
+import bookRoutes from './routes/bookRoute.js';
+import 'dotenv/config.js'
 
 const app = express();
 app.use(express.json());
