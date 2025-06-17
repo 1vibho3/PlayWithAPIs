@@ -2,6 +2,7 @@ import express from 'express';
 import ConnectDB from './config/db.js';
 import bookRoutes from './routes/bookRoute.js';
 import authRoutes from './routes/authRoute.js';
+import adminRoutes from './routes/adminRoute.js';
 import 'dotenv/config.js'
 
 const app = express();
@@ -9,6 +10,7 @@ app.use(express.json());
 
 app.use('/books', bookRoutes);
 app.use('/auth', authRoutes);
+app.use('/admin', adminRoutes);
 ConnectDB();
 
 const PORT = process.env.PORT || 8080;
