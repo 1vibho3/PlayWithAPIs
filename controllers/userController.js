@@ -4,7 +4,7 @@ import User from '../models/user.js';
 
 export async function createUser(req, res) {
     try{
-        const {email, password} = req.body
+        const {email, password, name} = req.body
 
         let userExists = await User.findOne({email});
         if(userExists){
@@ -13,7 +13,7 @@ export async function createUser(req, res) {
 
         const hashPassword = await bcrypt.hash(password, 10);
 
-        const newUser = new User({email: email, password: hashPassword});
+        const newUser = new User({email: email, password: hashPassword, name: name});
 
         await newUser.save();
         res.status(201).json({message: "User successfully registered"});

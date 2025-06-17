@@ -47,12 +47,12 @@ export async function getAllBooks(req, res) {
     
 }
 
-//Read by Title
+//Read by Title, populate
 
 export async function getBookByTitle(req, res) {
     try{
         const title = req.params.title;
-        const book = await Book.findOne({title: title})
+        const book = await Book.findOne({title: title}).populate('author', 'name role')
         res.status(200).json(book);
     }
     catch (err){

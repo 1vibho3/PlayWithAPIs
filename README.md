@@ -7,4 +7,8 @@
     - What’s the difference between:
     - req.user.email (from JWT)
     - req.body.email (from user input)
-    - Why do you use Bearer <token>?
+    - Why do you use Bearer <token>
+
+2. Mongo DB Schema Desing
+    - Populate Example
+        - bookController -> getBookByTitle
