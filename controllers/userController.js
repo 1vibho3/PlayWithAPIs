@@ -28,6 +28,7 @@ export async function login(req, res) {
         const {email, password} = req.body
 
         const userExists = await User.findOne({email});
+        console.log(userExists);
         if(!userExists){
                 return res.status(401).json({message:"User does not exist. Please register"})
         }
@@ -37,7 +38,7 @@ export async function login(req, res) {
             return res.status(401).json({message:"Invalid combination of email and password. Try again!"})
         }
 
-        const token = await jwt.sign({email: email}, process.env.JWT_SECRET, {expiresIn: '1h'});
+        const token = await jwt.sign({id: userExists._id, email: userExists.email}, process.env.JWT_SECRET, {expiresIn: '1h'});
         res.status(200).json({token})
     }
     catch (err){

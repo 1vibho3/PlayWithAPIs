@@ -2,13 +2,11 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
-    id: {
-        type: String,
-        required:true
-    },
+    
     title: {
         type: String,
-        required:true
+        required:true,
+        unique: true
     },
     author: {
         type: String,
